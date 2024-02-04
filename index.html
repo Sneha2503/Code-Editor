@@ -11,30 +11,30 @@
         editor.setTheme("ace/theme/monokai");
         editor.session.setMode("ace/mode/javascript");
       });
-      window.addEventListener('message', function(event) {
-            // // event.data contains the received message
-            // var receivedMessage = JSON.parse(event.data);
+      window.addEventListener("message", function (event) {
+        // // event.data contains the received message
+        // var receivedMessage = JSON.parse(event.data);
 
-            // // Handle the message as needed
-            // console.log('Message from React Native:', receivedMessage);
+        // // Handle the message as needed
+        // console.log('Message from React Native:', receivedMessage);
 
-            // // You can perform actions based on the received message
-            // if (receivedMessage.action === 'fromReactNative') {
-            //     alert('Received message from React Native: ' + receivedMessage.data);
-            // }
-           var editor = ace.edit("editor");
-          var content = editor.getValue();
-          window.ReactNativeWebView.postMessage(content);
-        });
+        // // You can perform actions based on the received message
+        // if (receivedMessage.action === 'fromReactNative') {
+        //     alert('Received message from React Native: ' + receivedMessage.data);
+        // }
+        var editor = ace.edit("editor");
+        var content = editor.getValue();
+        window.ReactNativeWebView.postMessage(content);
+      });
     </script>
     <style>
       #editor {
-        width: 1000px;
-        height: 700px;
+        width: 100vw;
+        height: 100vh;
       }
     </style>
   </head>
-  <body>
+  <body style="margin: 0px">
     <div id="editor"></div>
   </body>
 </html>

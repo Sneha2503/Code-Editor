@@ -12,29 +12,25 @@
         editor.session.setMode("ace/mode/c_cpp");
       });
       window.addEventListener("message", function (event) {
-        // // event.data contains the received message
-        // var receivedMessage = JSON.parse(event.data);
-
-        // // Handle the message as needed
-        // console.log('Message from React Native:', receivedMessage);
-
-        // // You can perform actions based on the received message
-        // if (receivedMessage.action === 'fromReactNative') {
-        //     alert('Received message from React Native: ' + receivedMessage.data);
-        // }
         var editor = ace.edit("editor");
         var content = editor.getValue();
         window.ReactNativeWebView.postMessage(content);
       });
     </script>
     <style>
+      * {
+        margin: 0px;
+      }
       #editor {
         width: 100vw;
         height: 100vh;
       }
+      .ace_mobile-menu {
+        display: none !important;
+      }
     </style>
   </head>
-  <body style="margin: 0px">
+  <body>
     <div id="editor"></div>
   </body>
 </html>

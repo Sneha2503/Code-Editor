@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/gh/ajaxorg/ace-builds@1.4.12/src/ace.js"></script>
     <script>
+      let aceContent = "";
       document.addEventListener("DOMContentLoaded", function () {
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/monokai");
@@ -14,9 +15,22 @@
         // Function to get the content of the editor
         function getContent() {
           var content = editor.getValue();
-          return content;
+          aceContent = content;
         }
       });
+      window.addEventListener('message', function(event) {
+            // // event.data contains the received message
+            // var receivedMessage = JSON.parse(event.data);
+
+            // // Handle the message as needed
+            // console.log('Message from React Native:', receivedMessage);
+
+            // // You can perform actions based on the received message
+            // if (receivedMessage.action === 'fromReactNative') {
+            //     alert('Received message from React Native: ' + receivedMessage.data);
+            // }
+        window.ReactNativeWebView.postMessage("I am working");
+        });
     </script>
     <style>
       #editor {

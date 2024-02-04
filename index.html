@@ -14,13 +14,8 @@
         // Function to get the content of the editor
         function getContent() {
           var content = editor.getValue();
-          console.log(content);
+          return content;
         }
-
-        // Example button click event to get the content
-        document
-          .getElementById("getContentBtn")
-          .addEventListener("click", getContent);
       });
     </script>
     <style>
@@ -32,6 +27,5 @@
   </head>
   <body>
     <div id="editor"></div>
-    <button id="getContentBtn">Get Editor Content</button>
   </body>
 </html>

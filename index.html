@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/ajaxorg/ace-builds@1.4.12/src/ace.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/javascript");
+
+        // Function to get the content of the editor
+        function getContent() {
+          var content = editor.getValue();
+          console.log(content);
+        }
+
+        // Example button click event to get the content
+        document
+          .getElementById("getContentBtn")
+          .addEventListener("click", getContent);
+      });
+    </script>
+    <style>
+      #editor {
+        width: 1000px;
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <button id="getContentBtn">Get Editor Content</button>
+  </body>
+</html>
